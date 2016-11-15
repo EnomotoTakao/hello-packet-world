@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" content="">
+<title>sample</title>
+</head>
+<body>
+
+<div>
+
+<p>
+<input type="button" value="Japanese" style="WIDTH:150px"
+  onClick="document.getElementById('english_question').style.display='none';
+           document.getElementById('japanese_question').style.display='block';
+           document.getElementById('english_answer').style.display='none'; 
+           document.getElementById('japanese_answer').style.display='block';
+           document.getElementById('english_explanation').style.display='none'; 
+           document.getElementById('japanese_explanation').style.display='block';
+           document.getElementById('english_remark').style.display='none'; 
+           document.getElementById('japanese_remark').style.display='block'">
+<input type="button" value="English" style="WIDTH:150px"
+  onClick="document.getElementById('english_question').style.display='block';
+           document.getElementById('japanese_question').style.display='none';
+           document.getElementById('english_answer').style.display='block';
+           document.getElementById('japanese_answer').style.display='none';
+           document.getElementById('english_explanation').style.display='block';
+           document.getElementById('japanese_explanation').style.display='none';
+           document.getElementById('english_remark').style.display='block';
+           document.getElementById('japanese_remark').style.display='none'">
+<input type="button" value="English/Japanese" style="WIDTH:150px"
+  onClick="document.getElementById('english_question').style.display='block';
+           document.getElementById('japanese_question').style.display='block';
+           document.getElementById('english_answer').style.display='block';
+           document.getElementById('japanese_answer').style.display='block'
+           document.getElementById('english_explanation').style.display='block';
+           document.getElementById('japanese_explanation').style.display='block';
+           document.getElementById('english_remark').style.display='block';
+           document.getElementById('japanese_remark').style.display='block'">
+</p>
+
+
+<div onclick="obj=document.getElementById('question').style; obj.display=(obj.display=='none')?'block':'none';">
+<a style="cursor:pointer;" class="open_button"><div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; background-color: #ffff99"><font color="#fff">Question</font></div></a>
+</div>
+<div id="question" style="display:block;clear:both;">
+<!--// Question Start-->
+
+<div id="english_question">
+<p>
+You plan to deploy a cloud service to an Azure subsctiption.<BR>
+<BR>
+You notice that the cloud service has a public IP address.<BR>
+<BR>
+You need to ensure that the IP address assigned to the cloud service persists for one year.<BR>
+<BR>
+What should you do first?<BR>
+<BR>
+---------<BR>
+Choose the correct answer<BR>
+---------<BR>
+<BR>
+[ ] Run the Set-AzureStaticVNetIP cmdlet and then modify the service definition file.<BR>
+[ ] Run the New-AzureReservedIP cmdlet and then modify the service definition file<BR>
+[ ] Run the Set-AzureStaticVNetIP cmdlet and then modify the service configuration file.<BR>
+[ ] Run the New-AzureReservedIP cmdlet and then modify the service configuration file.<BR>
+<BR>
+</p>
+</div>
+
+<div id="japanese_question" style="display:none">
+<p>
+Japanese Question
+</p>
+</div>
+
+
+<!--// Question End -->
+</div>
+
+<div onclick="obj=document.getElementById('answer').style; obj.display=(obj.display=='none')?'block':'none';">
+<a style="cursor:pointer;" class="open_button"><div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; background-color: #ffff99"><font color="#fff">Answer</font></div></a>
+</div>
+<div id="answer" style="display:none;clear:both;">
+<!--// Answer Start-->
+
+<div id="english_answer">
+<p>
+[ ] Run the Set-AzureStaticVNetIP cmdlet and then modify the service definition file.<BR>
+[ ] Run the New-AzureReservedIP cmdlet and then modify the service definition file<BR>
+[ ] Run the Set-AzureStaticVNetIP cmdlet and then modify the service configuration file.<BR>
+[*] Run the New-AzureReservedIP cmdlet and then modify the service configuration file.<BR>
+</p>
+</div>
+
+<div id="japanese_answer" style="display:none">
+<p>
+Japanese Answer
+</p>
+</div>
+
+<!--// Answer End -->
+</div>
+
+<div onclick="obj=document.getElementById('explanation').style; obj.display=(obj.display=='none')?'block':'none';">
+<a style="cursor:pointer;" class="open_button"><div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; background-color: #ffff99"><font color="#fff">Explanation</font></div></a>
+</div>
+<div id="explanation" style="display:none;clear:both;">
+<!--// Explanation Start-->
+
+<div id="english_explanation">
+<p>
+You should run the New-AzureReservedIP cmdlet. This cmdlet is used to reserve a public IP address. You should then modify the service configuration file to associate the public reserved IP address with the cloud service.<BR>
+<BR>
+You should not use the service definition file. This file does not support network configuration changes The service definition file defines the service model for a cloud servicec, including definition of its roles and service endpoints, but not the virtual network settings.<BR>
+<BR>
+You should not run the Set-AzureStaticVNetIP cmdlet. This cmldet is used to configure static IP addresses, not virtual IP (VIP) addresses.<BR>
+<BR>
+</p>
+</div>
+
+<div id="japanese_explanation" style="display:none">
+<p>
+Japanese Explanation
+</p>
+</div>
+
+<!--// Explanation End -->
+</div>
+
+
+<div onclick="obj=document.getElementById('remark').style; obj.display=(obj.display=='none')?'block':'none';">
+<a style="cursor:pointer;" class="open_button"><div style="padding: 10px; margin-bottom: 10px; border: 1px solid #333333; background-color: #ffff99"><font color="#fff">Remark</font></div></a>
+</div>
+<div id="remark" style="display:none;clear:both;">
+<!--// Explanation Start-->
+
+<div id="english_remark">
+<p>
+・networkの設定はservice configuration fileに記述する。
+・Set-AzureStaticVNetIPはセグメント上のstatic IPを設定する為に使う。VIPには使えない。
+</p>
+</div>
+
+<div id="japanese_remark" style="display:none">
+<p>
+Japanese Explanation
+</p>
+</div>
+
+<!--// Explanation End -->
+</div>
+
+
+</div>
+
+</body>
+</html>
